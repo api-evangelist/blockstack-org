@@ -1,0 +1,13 @@
+generated: '2026-10-24'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.stacks.co/clarinet/mainnet-execution-simulation.md
+sources:
+- https://docs.stacks.co/clarinet/mainnet-execution-simulation.md
+description: Mainnet Execution Simulation (MXS) provides a sandbox‑like test mode for Clarinet projects.
+modes:
+- name: MXS
+  base_url: https://api.hiro.so
+  how_to_get_access: Set the HIRO_API_KEY environment variable with an API key from Hiro. The key is optional but recommended to avoid rate limits.
+docs:
+- https://docs.stacks.co/clarinet/mainnet-execution-simulation.md

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/blockstack-org/main/json-schema/blockstack-org-post-construction-preprocess-request-schema.json",
+  "title": "PostConstructionPreprocessRequest",
+  "x-generated": "2026-10-24",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/blockstack-org-api-openapi-generated.yml#/components/schemas/PostConstructionPreprocessRequest",
+  "type": "object",
+  "properties": {
+    "network_identifier": {
+      "type": "object",
+      "properties": {
+        "blockchain": {
+          "type": "string"
+        },
+        "network": {
+          "type": "string"
+        }
+      }
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "operation_identifier": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "integer"
+              }
+            }
+          },
+          "type": {
+            "type": "string"
+          },
+          "account": {
+            "type": "object",
+            "properties": {
+              "address": {
+                "type": "string"
+              }
+            }
+          },
+          "amount": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string"
+              },
+              "currency": {
+                "type": "object",
+                "properties": {
+                  "symbol": {
+                    "type": "string"
+                  },
+                  "decimals": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "memo": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

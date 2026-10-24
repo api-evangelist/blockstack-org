@@ -1,25 +1,145 @@
 aid: blockstack-org
+
 name: Stacks
-description: 'Stacks is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
-  backed by union-square-ventures) and added to the network as a stub for full-pipeline profiling.'
+
+image: https://cdn.prod.website-files.com/618b0aafa4afde65f2fe38fe/6834ec468b986650406f513f_webp-stacks-bitcoin-layer-smart-contracts-header.webp
+
+description: 'Stacks is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio; backed by union-square-ventures) and
+  added to the network as a stub for full-pipeline profiling.'
+
 url: https://raw.githubusercontent.com/api-evangelist/blockstack-org/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-24 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-24'
+
 modified: '2026-10-24'
+
 tags:
-- Company
-apis: []
+- Bitcoin Staking
+- Self‑Custodial
+- DeFi
+- Smart Contracts
+- Layer‑2
+- Institutional Crypto
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-x-backed-by:
-- union-square-ventures
+
 common:
+- type: Spectral
+  url: rules/blockstack-org-rules.yml
+- type: JSONLD
+  url: json-ld/blockstack-org-context.jsonld
+- type: Vocabulary
+  url: vocabulary/blockstack-org-vocabulary.yml
+- type: DataModel
+  url: data-model/blockstack-org-data-model.yml
+- type: ChangeLog
+  url: changelog/blockstack-org-changelog.yml
+- type: Conventions
+  url: conventions/blockstack-org-conventions.yml
+- type: Sandbox
+  url: sandbox/blockstack-org-sandbox.yml
+- type: Authentication
+  url: authentication/blockstack-org-authentication.yml
+- type: Conformance
+  url: conformance/blockstack-org-conformance.yml
+- type: LLMsTxt
+  url: llms/blockstack-org-llms.txt
+- type: WellKnown
+  url: well-known/blockstack-org-well-known.yml
+- type: Hosts
+  url: hosts/blockstack-org-hosts.yml
+- type: Vendors
+  url: vendors/blockstack-org-vendors.yml
+- type: Security
+  url: https://www.stacks.co/build/security
+- type: Roadmap
+  url: https://www.stacks.co/roadmap
+- type: GitHubOrganization
+  url: https://github.com/alexgo-io
+- type: Blog
+  url: https://www.stacks.co/blog
+- type: GettingStarted
+  url: https://docs.stacks.co/get-started/developer-quickstart
+- type: Documentation
+  url: https://docs.blockstack.org/
+- type: APIReference
+  url: https://docs.stacks.co/reference/api/stacks-blockchain-api.md
+- type: DomainSecurity
+  url: security/blockstack-org-domain-security.yml
 - type: Website
   url: https://www.blockstack.org
+
+apis:
+- aid: blockstack-org:api-api
+  name: Stacks api API
+  description: 'Stacks api API as documented publicly: 28 operations. Contract generated from the documentation by API Evangelist (2026-10-24);
+    not the provider''s own document.'
+  humanURL: https://docs.stacks.co/reference/api
+  baseURL: https://api.hiro.so
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/blockstack-org-api-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/blockstack-org-post-deposit-request-schema.json
+  - type: JSONSchema
+    url: json-schema/blockstack-org-post-construction-preprocess-request-schema.json
+  - type: JSONSchema
+    url: json-schema/blockstack-org-get-v2-accounts-principal-response-schema.json
+  - type: JSONSchema
+    url: json-schema/blockstack-org-post-construction-metadata-response-schema.json
+  - type: JSONSchema
+    url: json-schema/blockstack-org-post-construction-payloads-response-schema.json
+  - type: JSONSchema
+    url: json-schema/blockstack-org-post-construction-preprocess-response-schema.json
+- aid: blockstack-org:core-api
+  name: Stacks core API
+  description: 'Stacks core API as documented publicly: 7 operations. Contract generated from the documentation by API Evangelist (2026-10-24);
+    not the provider''s own document.'
+  humanURL: https://docs.stacks.co/reference/clarinet
+  baseURL: https://api.hiro.so
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/blockstack-org-core-openapi-generated.yml
+    x-provenance: generated
+- aid: blockstack-org:stacks.js-api
+  name: Stacks stacks.js API
+  description: 'Stacks stacks.js API as documented publicly: 3 operations. Contract generated from the documentation by API Evangelist (2026-10-24);
+    not the provider''s own document.'
+  humanURL: https://docs.stacks.co/reference/stacks.js
+  baseURL: https://api.hiro.so
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/blockstack-org-stacks.js-openapi-generated.yml
+    x-provenance: generated
+
+x-backed-by:
+- union-square-ventures
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: Docs are rendered via JavaScript and no machine‑readable OpenAPI spec was found.
+  evidence:
+  - url: https://stacks.co/developers
+    status: 200
+  checked: '2026-10-24'
+x-enrichment:
+  date: '2026-10-24'
+  status: enriched
+  artifacts_added: 30
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

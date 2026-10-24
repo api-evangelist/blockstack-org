@@ -1,0 +1,253 @@
+generated: '2026-10-24'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/blockstack-org-openapi-generated.yml
+vocabulary:
+  name: Stacks Domain Vocabulary
+  description: 'Terms declared by Stacks''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-24'
+  terms:
+  - term: PostCallRequest
+    definition: 'Object declared by the contract with fields: network_identifier, method, parameters.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PostCallRequest
+  - term: PostCallResponse
+    definition: 'Object declared by the contract with fields: idempotent, result.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PostCallResponse
+  - term: GetChainstateResponse
+    definition: 'Object declared by the contract with fields: 200, 404, 405, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/GetChainstateResponse
+  - term: GetChainstateHeightResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 404, 405, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/GetChainstateHeightResponse
+  - term: PostConstructionCombineResponse
+    definition: 'Object declared by the contract with fields: idempotent, result.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PostConstructionCombineResponse
+  - term: PostConstructionMetadataResponse
+    definition: 'Object declared by the contract with fields: operation_identifier, type, account, amount, metadata.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PostConstructionMetadataResponse
+  - term: PostConstructionPayloadsResponse
+    definition: 'Object declared by the contract with fields: operation_identifier, type, account, amount, metadata.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PostConstructionPayloadsResponse
+  - term: PostConstructionPreprocessRequest
+    definition: 'Object declared by the contract with fields: network_identifier, operations.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PostConstructionPreprocessRequest
+  - term: PostConstructionPreprocessResponse
+    definition: 'Object declared by the contract with fields: operation_identifier, type, account, amount, metadata.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PostConstructionPreprocessResponse
+  - term: PostConstructionSubmitRequest
+    definition: 'Object declared by the contract with fields: network_identifier, signed_transaction.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PostConstructionSubmitRequest
+  - term: PostConstructionSubmitResponse
+    definition: 'Object declared by the contract with fields: idempotent, result.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PostConstructionSubmitResponse
+  - term: GetDepositResponse
+    definition: 'Object declared by the contract with fields: deposits, nextToken.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/GetDepositResponse
+  - term: PostDepositRequest
+    definition: 'Object declared by the contract with fields: bitcoinTxid, bitcoinTxOutputIndex, reclaimScript, depositScript, transactionHex,
+      maxFee, recipient.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PostDepositRequest
+  - term: PostDepositResponse
+    definition: 'Object declared by the contract with fields: deposit.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PostDepositResponse
+  - term: PutDepositRequest
+    definition: 'Object declared by the contract with fields: deposits.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PutDepositRequest
+  - term: PutDepositResponse
+    definition: 'Object declared by the contract with fields: deposits.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PutDepositResponse
+  - term: GetDepositTxidResponse
+    definition: 'Object declared by the contract with fields: deposits, nextToken.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/GetDepositTxidResponse
+  - term: GetDepositTxidIndexResponse
+    definition: 'Object declared by the contract with fields: deposit.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/GetDepositTxidIndexResponse
+  - term: GetHealthResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 404, 405, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/GetHealthResponse
+  - term: GetLimitsResponse
+    definition: 'Object declared by the contract with fields: 200, 405, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/GetLimitsResponse
+  - term: GetLimitsAccountResponse
+    definition: 'Object declared by the contract with fields: 201, 400, 404, 405, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/GetLimitsAccountResponse
+  - term: PostNetworkListRequest
+    definition: 'Object declared by the contract with fields: metadata.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PostNetworkListRequest
+  - term: PostNetworkListResponse
+    definition: 'Object declared by the contract with fields: network_identifiers.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PostNetworkListResponse
+  - term: PostNetworkOptionsRequest
+    definition: 'Object declared by the contract with fields: network_identifier, metadata.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PostNetworkOptionsRequest
+  - term: PostNetworkOptionsResponse
+    definition: 'Object declared by the contract with fields: version, allow.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PostNetworkOptionsResponse
+  - term: GetV2AccountsPrincipalResponse
+    definition: 'Object declared by the contract with fields: balance, locked, unlock_height, nonce, balance_proof, nonce_proof.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/GetV2AccountsPrincipalResponse
+  - term: GetV2MicroblocksMicroblockidResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 404, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/GetV2MicroblocksMicroblockidResponse
+  - term: GetWithdrawalResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 404, 405, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/GetWithdrawalResponse
+  - term: PutWithdrawalRequest
+    definition: 'Object declared by the contract with fields: withdrawals.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PutWithdrawalRequest
+  - term: PutWithdrawalResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 403, 404, 405, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/PutWithdrawalResponse
+  - term: GetWithdrawalRecipientRecipientResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 404, 405, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/GetWithdrawalRecipientRecipientResponse
+  - term: GetWithdrawalSenderSenderResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 404, 405, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/GetWithdrawalSenderSenderResponse
+  - term: GetWithdrawalIdResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 404, 405, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/GetWithdrawalIdResponse
+  - term: GetNetworkstrDepositsResponse
+    definition: 'Object declared by the contract with fields: deposits, total.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml#/components/schemas/GetNetworkstrDepositsResponse
+  - term: Call
+    definition: 'Resource group in the contract; its operation POST /call: POST /call'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml
+  - term: Chainstate
+    definition: 'Resource group in the contract; its operation GET /chainstate: Get chain tip handler.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml
+  - term: Construction
+    definition: 'Resource group in the contract; its operation POST /construction/combine: POST /construction/combine'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml
+  - term: Deposit
+    definition: 'Resource group in the contract; its operation GET /deposit: Get deposits handler.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml
+  - term: Extended
+    definition: 'Resource group in the contract; its operation GET /extended: GET /extended'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml
+  - term: Health
+    definition: 'Resource group in the contract; its operation GET /health: Get health handler.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml
+  - term: Limits
+    definition: 'Resource group in the contract; its operation GET /limits: Get the global limits.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml
+  - term: Network
+    definition: 'Resource group in the contract; its operation POST /network/list: POST /network/list endpoint returns the list of network identifiers.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml
+  - term: Reference
+    definition: 'Resource group in the contract; its operation GET /reference/api/stacks-mesh-api/models.md: The response will contain a direct
+      answer to the question and relevant excerpts and sources from the documentation.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml
+  - term: Accounts
+    definition: 'Resource group in the contract; its operation GET /v2/accounts/{principal}: Get the account data for the provided principal Where
+      balance is the hex encoding of a unsigned 128-bit integer (big-endian), nonce is a unsigned 64-bit integer, and the proofs are provided
+      as hex strings.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml
+  - term: Microblocks
+    definition: 'Resource group in the contract; its operation GET /v2/microblocks/{microblockId}: Get a stream of microblocks beginning with
+      the given microblock (Epoch 2.x).'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml
+  - term: Withdrawal
+    definition: 'Resource group in the contract; its operation GET /withdrawal: Get withdrawals handler.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml
+  - term: Deposits
+    definition: 'Resource group in the contract; its operation GET /{networkstr}/deposits: Returns all USDCx deposits from Ethereum to Stacks,
+      aggregating data from 3 sources: - **ETH Events**: DepositedToRemote events from the xReserve contract - **Circle Attestations**: Signed
+      attestations from Circle''s API (after ETH finality) - **STX Mints**: Print events from the relay transaction on Stacks Each deposit has
+      a status: - `pending`: Only the ETH event exists (waiting for Circle attest'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/blockstack-org-openapi-generated.yml

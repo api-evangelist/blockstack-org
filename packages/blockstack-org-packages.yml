@@ -1,0 +1,18 @@
+generated: '2026-10-24'
+method: none
+source:
+- https://registry.npmjs.org/@stacks/api
+- https://registry.npmjs.org/@stacks/network
+- https://registry.npmjs.org/@stacks/auth
+packages: []
+rejected:
+- name: '@stacks/api'
+  registry: npm
+  reason: 'registry metadata names neither the provider''s domain nor its GitHub org: official downgraded (harvest-packages.py --audit)'
+- name: '@stacks/network'
+  registry: npm
+  reason: 'registry has no such package: official downgraded (harvest-packages.py --audit)'
+- name: '@stacks/auth'
+  registry: npm
+  reason: 'registry has no such package: official downgraded (harvest-packages.py --audit)'
+note: 'no first-party package: every candidate a model listed was unowned (harvest-packages.py --audit)'

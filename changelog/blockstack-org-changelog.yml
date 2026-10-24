@@ -1,0 +1,28 @@
+generated: '2026-10-24'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.stacks.co/whats-new/latest-updates.md
+sources:
+- https://docs.stacks.co/whats-new/latest-updates.md
+- https://docs.stacks.co/stacks-connect/migration-guide.md
+entries:
+- breaking: false
+  highlights:
+  - SIP-045 and SIP-044 activated at Bitcoin block 960,230 on July 30, 2026.
+  - Epoch 4.0 replaced PoX-4 with `SP000000000000000000002Q6VF78.pox-5`, which pays stakers in sBTC, and shipped Clarity 6.
+  - The first PoX-5 reward cycle is 141; the first protocol bond opened at cycle 143 (Bitcoin block 966,350) and new bonds open every two cycles.
+  date: '2026-10-14'
+- breaking: false
+  highlights:
+  - A [Clarity plugin](https://github.com/stx-labs/clarity-claude-plugin) for Claude Code is now available via the Stacks Labs Claude plugin marketplace.
+  - Install it with two commands and Claude Code will be aware of the Clarity CLI and have access to the Clarity LSP — meaning the agent can actually
+    use the CLI as part of its workflow.
+  date: '2026-03-11'
+- breaking: false
+  highlights:
+  - The API section now includes the sBTC bridge's [Emily APIs](/reference/api/sbtc-bridge.md), allowing you to track peg-in and peg-out statuses
+    directly within the Stacks docs.
+  - We've also updated the [BNS section](/learn/network-fundamentals/bitcoin-name-system.md) to reflect the canonical BNSv2 protocol.
+  date: '2026-03-07'
+docs: https://docs.stacks.co/whats-new/latest-updates.md
+note: 3 extracted row(s) were dropped because their quote was not on the page.

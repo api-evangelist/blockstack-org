@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/blockstack-org/main/json-schema/blockstack-org-post-deposit-request-schema.json",
+  "title": "PostDepositRequest",
+  "x-generated": "2026-10-24",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/blockstack-org-api-openapi-generated.yml#/components/schemas/PostDepositRequest",
+  "type": "object",
+  "properties": {
+    "bitcoinTxid": {
+      "type": "string",
+      "description": "Bitcoin transaction id."
+    },
+    "bitcoinTxOutputIndex": {
+      "type": "string",
+      "description": "Output index on the bitcoin transaction associated with this specific deposit."
+    },
+    "reclaimScript": {
+      "type": "string",
+      "description": "Reclaim script."
+    },
+    "depositScript": {
+      "type": "string",
+      "description": "Deposit script."
+    },
+    "transactionHex": {
+      "type": "string",
+      "description": "The raw transaction hex."
+    },
+    "maxFee": {
+      "type": "string",
+      "description": "Maximum fee in satoshis. Required for v2 deposits."
+    },
+    "recipient": {
+      "type": "string",
+      "description": "The consensus-encoded Stacks principal, represented as hex. Required for v2 deposits."
+    }
+  },
+  "required": [
+    "bitcoinTxid",
+    "bitcoinTxOutputIndex",
+    "reclaimScript",
+    "depositScript",
+    "transactionHex"
+  ]
+}

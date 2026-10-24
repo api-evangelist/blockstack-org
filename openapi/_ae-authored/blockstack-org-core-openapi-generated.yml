@@ -1,0 +1,195 @@
+openapi: 3.1.0
+info:
+  title: Stacks core API
+  version: '2026-10-24'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-24: 7 operation(s) read from 7 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Stacks has published no machine-readable contract that the pipeline
+    could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 7
+    documentation: 31
+    pages-with-code: 2
+    pages-read: 37
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-24'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.stacks.co/reference/clarinet/cli-reference.md
+  - https://docs.stacks.co/reference/clarity/keywords.md
+  - https://docs.stacks.co/reference/clarity/types.md
+  - https://docs.stacks.co/reference/epoch-4-0-consensus-changes.md
+  - https://docs.stacks.co/reference/node-operations/readme-1.md
+  - https://docs.stacks.co/reference/readme.md
+  - https://docs.stacks.co/reference/rendezvous/reference.md
+  x-docs-section: core
+servers:
+- url: https://api.hiro.so
+paths:
+  /reference/clarinet/cli-reference.md:
+    get:
+      operationId: get_reference_clarinet_cli_reference_md
+      tags:
+      - Reference
+      summary: Perform an HTTP GET request on the following URL with the `ask` and `goal` query parameters.
+      description: The response will contain a direct answer to the question and relevant excerpts and sources from the documentation.
+      x-source: https://docs.stacks.co/reference/clarinet/cli-reference.md
+      parameters:
+      - name: ask
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The immediate question; specific, self‑contained, natural language.
+      - name: goal
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The ultimate purpose of the request; describes the outcome the user wants.
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /reference/clarity/keywords.md:
+    get:
+      operationId: get_reference_clarity_keywords_md
+      tags:
+      - Reference
+      summary: Keywords
+      x-source: https://docs.stacks.co/reference/clarity/keywords.md
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /reference/clarity/types.md:
+    get:
+      operationId: get_reference_clarity_types_md
+      tags:
+      - Reference
+      summary: The complete reference guide to all Clarity types.
+      x-source: https://docs.stacks.co/reference/clarity/types.md
+      parameters:
+      - name: ask
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The immediate question; specific, self‑contained, natural language.
+      - name: goal
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The user’s ultimate goal; describes the desired outcome.
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /reference/epoch-4-0-consensus-changes.md:
+    get:
+      operationId: get_reference_epoch_4_0_consensus_changes_md
+      tags:
+      - Reference
+      summary: Epoch 4.0 Consensus Changes
+      description: Retrieves the Markdown page for Epoch 4.0 consensus changes. Optional query parameters `ask` and `goal` can be provided to
+        get a direct answer from the documentation.
+      x-source: https://docs.stacks.co/reference/epoch-4-0-consensus-changes.md
+      parameters:
+      - name: ask
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Specific question to ask the documentation.
+      - name: goal
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The broader goal behind the question.
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /reference/readme.md:
+    get:
+      operationId: get_reference_readme_md
+      tags:
+      - Reference
+      summary: The Reference section of the Stacks docs provides detailed, comprehensive information about Stacks' programming languages, devtools,
+        and APIs.
+      x-source: https://docs.stacks.co/reference/readme.md
+      parameters:
+      - name: ask
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The immediate question; specific, self‑contained, natural‑language query.
+      - name: goal
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The user’s overall goal; describes the outcome they want to achieve.
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /reference/node-operations/readme-1.md:
+    get:
+      operationId: get_reference_node_operations_readme_1_md
+      tags:
+      - Reference
+      summary: Stacks Node Configuration
+      description: Retrieves the Stacks node configuration documentation page.
+      x-source: https://docs.stacks.co/reference/node-operations/readme-1.md
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /reference/rendezvous/reference.md:
+    get:
+      operationId: get_reference_rendezvous_reference_md
+      tags:
+      - Reference
+      summary: Perform an HTTP GET request on the following URL with the `ask` and `goal` query parameters
+      x-source: https://docs.stacks.co/reference/rendezvous/reference.md
+      parameters:
+      - name: ask
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The immediate question: it should be specific, self-contained, and written in natural language.'
+      - name: goal
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The user's ultimate goal, describing the outcome they want to achieve.
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+tags:
+- name: Reference
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-source: https://docs.stacks.co/get-started/build-a-frontend/authentication.md
+security:
+- apiKey: []

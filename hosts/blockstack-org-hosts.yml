@@ -1,0 +1,124 @@
+generated: '2026-10-24'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 9
+  own: 3
+  other_domain: 4
+  platform: 2
+  roles:
+  - api
+  - docs
+  - marketing
+  - other
+  - source
+  - website
+hosts:
+- host: api.blockstack.org
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: blockstack.org
+  role: api
+  relation: own
+- host: api.hiro.so
+  found_by:
+  - apis[]
+  types: []
+  serves:
+  - api
+  registrable_domain: hiro.so
+  role: api
+  relation: other-domain
+- host: api.stacks.co
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: stacks.co
+  role: api
+  relation: other-domain
+- host: docs.blockstack.org
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - namespace-probe
+  - contract-discovery
+  - well-known
+  types:
+  - Documentation
+  serves: []
+  title: Introduction | Stacks Documentation
+  status: 200
+  registrable_domain: blockstack.org
+  role: docs
+  relation: own
+- host: docs.stacks.co
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - docs-index
+  - well-known
+  types:
+  - GettingStarted
+  - APIReference
+  serves:
+  - docs
+  registrable_domain: stacks.co
+  role: docs
+  relation: other-domain
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: raw.githubusercontent.com
+  found_by:
+  - spec-found
+  types: []
+  serves:
+  - spec
+  registrable_domain: githubusercontent.com
+  role: other
+  relation: platform
+- host: www.blockstack.org
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  serves:
+  - cdn
+  vendor: cloudflare
+  registrable_domain: blockstack.org
+  role: website
+  relation: own
+- host: www.stacks.co
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - Security
+  - Roadmap
+  - Blog
+  serves:
+  - docs
+  registrable_domain: stacks.co
+  role: marketing
+  relation: other-domain

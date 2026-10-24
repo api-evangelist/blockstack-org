@@ -1,0 +1,26 @@
+generated: '2026-10-24'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.stacks.co/reference/api/stacks-blockchain-api/pagination.md
+sources:
+- https://docs.stacks.co/reference/api/stacks-blockchain-api/pagination.md
+- https://docs.stacks.co/get-started/developer-quickstart.md
+- https://docs.stacks.co/clarinet/quickstart.md
+- https://docs.stacks.co/rendezvous/quickstart.md
+idempotency:
+  coverage: none
+pagination:
+  style: cursor-based
+  params:
+  - limit
+  - cursor
+  response_fields:
+  - limit
+  - total
+  - results
+  - cursor.next
+  - cursor.previous
+  - cursor.current
+  evidence: Cursor-paginated endpoints accept `limit` (default 20, max 50) and `cursor`. Response includes `limit`, `total`, `results`, and a
+    `cursor` object with `next`, `previous`, `current`.
+docs: https://docs.stacks.co/reference/api/stacks-blockchain-api/pagination.md

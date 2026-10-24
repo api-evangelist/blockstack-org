@@ -1,0 +1,1333 @@
+openapi: 3.1.0
+info:
+  title: Stacks api API
+  version: '2026-10-24'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-24: 28 operation(s) read from 12 public documentation page(s) (each
+    operation names its page in x-source). This is not the provider''s published contract; Stacks has published no machine-readable contract that
+    the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 7
+    documentation: 31
+    pages-with-code: 2
+    pages-read: 37
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-24'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.stacks.co/reference/api/sbtc-bridge/chainstate.md
+  - https://docs.stacks.co/reference/api/sbtc-bridge/deposit.md
+  - https://docs.stacks.co/reference/api/sbtc-bridge/health.md
+  - https://docs.stacks.co/reference/api/sbtc-bridge/limits.md
+  - https://docs.stacks.co/reference/api/sbtc-bridge/withdrawal.md
+  - https://docs.stacks.co/reference/api/stacks-blockchain-api.md
+  - https://docs.stacks.co/reference/api/stacks-mesh-api.md
+  - https://docs.stacks.co/reference/api/stacks-mesh-api/models.md
+  - https://docs.stacks.co/reference/api/stacks-mesh-api/network.md
+  - https://docs.stacks.co/reference/api/stacks-node-rpc/accounts.md
+  - https://docs.stacks.co/reference/api/stacks-node-rpc/blocks.md
+  - https://docs.stacks.co/reference/api/usdcx-bridge/deposits.md
+  x-docs-section: api
+servers:
+- url: https://api.hiro.so
+paths:
+  /call:
+    post:
+      operationId: post_call
+      tags:
+      - Call
+      summary: POST /call
+      x-source: https://docs.stacks.co/reference/api/stacks-mesh-api.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostCallRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostCallResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -s http://localhost:3000/call -H 'Content-Type: application/json' -d '{\n  \"network_identifier\": { \"blockchain\": \"\
+          stacks\", \"network\": \"mainnet\" },\n  \"method\": \"contract_call_read_only\",\n  \"parameters\": {\n    \"deployer_address\": \"\
+          SP3K8BC0PPEVCV7NZ6QSRWPQ2JE9E5B6N3PA0KBR9\",\n    \"contract_name\": \"age000-governance-token\",\n    \"function_name\": \"get-balance\"\
+          ,\n    \"sender\": \"SP3K8BC0PPEVCV7NZ6QSRWPQ"
+  /chainstate:
+    get:
+      operationId: get_chainstate
+      tags:
+      - Chainstate
+      summary: Get chain tip handler.
+      x-source: https://docs.stacks.co/reference/api/sbtc-bridge/chainstate.md
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetChainstateResponse'
+      x-evidence:
+        kind: documentation
+  /chainstate/{height}:
+    get:
+      operationId: get_chainstate_height
+      tags:
+      - Chainstate
+      summary: Get chainstate handler.
+      x-source: https://docs.stacks.co/reference/api/sbtc-bridge/chainstate.md
+      parameters:
+      - name: height
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetChainstateHeightResponse'
+      x-evidence:
+        kind: documentation
+  /construction/combine:
+    post:
+      operationId: post_construction_combine
+      tags:
+      - Construction
+      summary: POST /construction/combine
+      x-source: https://docs.stacks.co/reference/api/stacks-mesh-api.md
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostConstructionCombineResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -s http://localhost:3000/construction/combine -H 'Content-Type: application/json' -d '{\n  \"network_identifier\": { \"\
+          blockchain\": \"stacks\", \"network\": \"testnet\" },\n  \"unsigned_transaction\": \"UNSIGNED_TX_HEX\",\n  \"signatures\": [\n    {\n\
+          \      \"signing_payload\": { \"...payload from step 3...\" },\n      \"public_key\": { \"hex_bytes\": \"YOUR_PUBLIC_KEY_HEX\", \"curve_type\"\
+          : \"secp256k1\" },\n      \"signature_ty"
+  /construction/metadata:
+    post:
+      operationId: post_construction_metadata
+      tags:
+      - Construction
+      summary: POST /construction/metadata
+      x-source: https://docs.stacks.co/reference/api/stacks-mesh-api.md
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostConstructionMetadataResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -s http://localhost:3000/construction/metadata -H 'Content-Type: application/json' -d '{\n  \"network_identifier\": { \"\
+          blockchain\": \"stacks\", \"network\": \"testnet\" },\n  \"options\": { \"...options from preprocess...\" },\n  \"public_keys\": [\n\
+          \    { \"hex_bytes\": \"YOUR_PUBLIC_KEY_HEX\", \"curve_type\": \"secp256k1\" }\n  ]\n}'\n```"
+  /construction/payloads:
+    post:
+      operationId: post_construction_payloads
+      tags:
+      - Construction
+      summary: POST /construction/payloads
+      x-source: https://docs.stacks.co/reference/api/stacks-mesh-api.md
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostConstructionPayloadsResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -s http://localhost:3000/construction/payloads -H 'Content-Type: application/json' -d '{\n  \"network_identifier\": { \"\
+          blockchain\": \"stacks\", \"network\": \"testnet\" },\n  \"operations\": [\n    {\n      \"operation_identifier\": { \"index\": 0 },\n\
+          \      \"type\": \"fee\",\n      \"account\": { \"address\": \"STB44HYPYAT2BB2QE513NSP81HTMYWBJP02HPGK6\" },\n      \"amount\": { \"\
+          value\": \"-200\", \"currency\": { \"symbol\": \"STX\","
+  /construction/preprocess:
+    post:
+      operationId: post_construction_preprocess
+      tags:
+      - Construction
+      summary: POST /construction/preprocess
+      x-source: https://docs.stacks.co/reference/api/stacks-mesh-api.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostConstructionPreprocessRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostConstructionPreprocessResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -s http://localhost:3000/construction/preprocess -H 'Content-Type: application/json' -d '{\n  \"network_identifier\": {\
+          \ \"blockchain\": \"stacks\", \"network\": \"testnet\" },\n  \"operations\": [\n    {\n      \"operation_identifier\": { \"index\":\
+          \ 0 },\n      \"type\": \"token_transfer\",\n      \"account\": { \"address\": \"STB44HYPYAT2BB2QE513NSP81HTMYWBJP02HPGK6\" },\n   \
+          \   \"amount\": { \"value\": \"-1000000\", \"currency\": {"
+  /construction/submit:
+    post:
+      operationId: post_construction_submit
+      tags:
+      - Construction
+      summary: POST /construction/submit
+      x-source: https://docs.stacks.co/reference/api/stacks-mesh-api.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostConstructionSubmitRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostConstructionSubmitResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -s http://localhost:3000/construction/submit -H 'Content-Type: application/json' -d '{\n  \"network_identifier\": { \"\
+          blockchain\": \"stacks\", \"network\": \"testnet\" },\n  \"signed_transaction\": \"SIGNED_TX_HEX\"\n}'\n```"
+  /deposit:
+    get:
+      operationId: get_deposit
+      tags:
+      - Deposit
+      summary: Get deposits handler.
+      description: Get deposits handler.
+      x-source: https://docs.stacks.co/reference/api/sbtc-bridge/deposit.md
+      parameters:
+      - name: status
+        in: query
+        required: true
+        schema:
+          type: string
+        description: the status to search by when getting all deposits.
+      - name: nextToken
+        in: query
+        required: false
+        schema:
+          type: string
+        description: the next token value from the previous return of this api call.
+      - name: pageSize
+        in: query
+        required: false
+        schema:
+          type: string
+        description: the maximum number of items in the response list.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetDepositResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_deposit
+      tags:
+      - Deposit
+      summary: Create deposit handler.
+      description: Create deposit handler.
+      x-source: https://docs.stacks.co/reference/api/sbtc-bridge/deposit.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostDepositRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostDepositResponse'
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_deposit
+      tags:
+      - Deposit
+      summary: Update deposits handler.
+      description: Update deposits handler.
+      x-source: https://docs.stacks.co/reference/api/sbtc-bridge/deposit.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutDepositRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutDepositResponse'
+      x-evidence:
+        kind: documentation
+  /deposit/{txid}:
+    get:
+      operationId: get_deposit_txid
+      tags:
+      - Deposit
+      summary: Get deposits for transaction handler.
+      description: Get deposits for transaction handler.
+      x-source: https://docs.stacks.co/reference/api/sbtc-bridge/deposit.md
+      parameters:
+      - name: txid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: nextToken
+        in: query
+        required: false
+        schema:
+          type: string
+        description: the next token value from the previous return of this api call.
+      - name: pageSize
+        in: query
+        required: false
+        schema:
+          type: string
+        description: the maximum number of items in the response list.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetDepositTxidResponse'
+      x-evidence:
+        kind: documentation
+  /deposit/{txid}/{index}:
+    get:
+      operationId: get_deposit_txid_index
+      tags:
+      - Deposit
+      summary: Get deposit handler.
+      description: Get deposit handler.
+      x-source: https://docs.stacks.co/reference/api/sbtc-bridge/deposit.md
+      parameters:
+      - name: txid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: index
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetDepositTxidIndexResponse'
+      x-evidence:
+        kind: documentation
+  /extended:
+    get:
+      operationId: get_extended
+      tags:
+      - Extended
+      summary: GET /extended
+      x-source: https://docs.stacks.co/reference/api/stacks-blockchain-api.md
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -L ''https://api.hiro.so/extended'' -H ''Accept: application/json''
+
+          ```'
+  /health:
+    get:
+      operationId: get_health
+      tags:
+      - Health
+      summary: Get health handler.
+      x-source: https://docs.stacks.co/reference/api/sbtc-bridge/health.md
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetHealthResponse'
+      x-evidence:
+        kind: documentation
+  /limits:
+    get:
+      operationId: get_limits
+      tags:
+      - Limits
+      summary: Get the global limits.
+      x-source: https://docs.stacks.co/reference/api/sbtc-bridge/limits.md
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetLimitsResponse'
+      x-evidence:
+        kind: documentation
+  /limits/{account}:
+    get:
+      operationId: get_limits_account
+      tags:
+      - Limits
+      summary: Get limits for account handler.
+      x-source: https://docs.stacks.co/reference/api/sbtc-bridge/limits.md
+      parameters:
+      - name: account
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetLimitsAccountResponse'
+      x-evidence:
+        kind: documentation
+  /network/list:
+    post:
+      operationId: post_network_list
+      tags:
+      - Network
+      summary: Network endpoints
+      description: POST /network/list endpoint returns the list of network identifiers.
+      x-source: https://docs.stacks.co/reference/api/stacks-mesh-api/network.md
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostNetworkListRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostNetworkListResponse'
+      x-evidence:
+        kind: documentation
+  /network/options:
+    post:
+      operationId: post_network_options
+      tags:
+      - Network
+      summary: Network endpoints
+      description: POST /network/options endpoint returns network options and capabilities.
+      x-source: https://docs.stacks.co/reference/api/stacks-mesh-api/network.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostNetworkOptionsRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostNetworkOptionsResponse'
+      x-evidence:
+        kind: documentation
+  /reference/api/stacks-mesh-api/models.md:
+    get:
+      operationId: get_reference_api_stacks_mesh_api_models_md
+      tags:
+      - Reference
+      summary: Perform an HTTP GET request on the following URL with the `ask` and `goal` query parameters
+      description: The response will contain a direct answer to the question and relevant excerpts and sources from the documentation.
+      x-source: https://docs.stacks.co/reference/api/stacks-mesh-api/models.md
+      parameters:
+      - name: ask
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The immediate question; should be specific, self-contained, and written in natural language.
+      - name: goal
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The user's ultimate goal; describes the outcome the user wants rather than restating the question.
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /v2/accounts/{principal}:
+    get:
+      operationId: get_v2_accounts_principal
+      tags:
+      - Accounts
+      summary: Get account info
+      description: 'Get the account data for the provided principal
+
+
+        Where balance is the hex encoding of a unsigned 128-bit integer (big-endian), nonce is a unsigned 64-bit integer, and the proofs are provided
+        as hex strings.
+
+
+        For non-existent accounts, this does not 404, rather it returns an object with balance and nonce of 0.'
+      x-source: https://docs.stacks.co/reference/api/stacks-node-rpc/accounts.md
+      parameters:
+      - name: principal
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: proof
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Controls MARF proof inclusion in response. Set to 1 (default) to include proof, 0 to exclude.
+
+          Invalid values default to 0 (no proof).'
+      - name: tip
+        in: query
+        required: false
+        schema:
+          type: string
+        description: "Stacks chain tip to query from. Options:\n- (empty/omitted): Use latest anchored tip (canonical confirmed state)\n- `latest`:\
+          \ Use latest known tip including unconfirmed microblocks.\n  If no unconfirmed state is available, falls back to the confirmed canonical\
+          \ tip.\n  If the unconfirmed state check fails with an error, returns 404.\n- `{block_id}`: Use specific block ID (64 lowercase hex\
+          \ characters)\n\n**Note:** If `tip` is present but contains an invalid or malformed value\n(i.e., not `latest` and not a valid 64-character\
+          \ hex block ID),\nthe node silently falls back to the latest anchored tip (same as omitting `tip`)."
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV2AccountsPrincipalResponse'
+      x-evidence:
+        kind: documentation
+  /v2/microblocks/{microblockId}:
+    get:
+      operationId: get_v2_microblocks_microblockId
+      tags:
+      - Microblocks
+      summary: Get a stream of microblocks beginning with the given microblock (Epoch 2.x).
+      description: Get a stream of microblocks beginning with the given microblock (Epoch 2.x).
+      x-source: https://docs.stacks.co/reference/api/stacks-node-rpc/blocks.md
+      parameters:
+      - name: microblockId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV2MicroblocksMicroblockidResponse'
+      x-evidence:
+        kind: documentation
+  /withdrawal:
+    get:
+      operationId: get_withdrawal
+      tags:
+      - Withdrawal
+      summary: Get withdrawals handler.
+      x-source: https://docs.stacks.co/reference/api/sbtc-bridge/withdrawal.md
+      parameters:
+      - name: status
+        in: query
+        required: true
+        schema:
+          type: string
+        description: the status to search by when getting all withdrawals.
+      - name: nextToken
+        in: query
+        required: false
+        schema:
+          type: string
+        description: the next token value from the previous return of this api call.
+      - name: pageSize
+        in: query
+        required: false
+        schema:
+          type: string
+        description: the maximum number of items in the response list.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetWithdrawalResponse'
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_withdrawal
+      tags:
+      - Withdrawal
+      summary: Update withdrawals handler.
+      x-source: https://docs.stacks.co/reference/api/sbtc-bridge/withdrawal.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutWithdrawalRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutWithdrawalResponse'
+      x-evidence:
+        kind: documentation
+  /withdrawal/recipient/{recipient}:
+    get:
+      operationId: get_withdrawal_recipient_recipient
+      tags:
+      - Withdrawal
+      summary: Get withdrawals by recipient handler.
+      x-source: https://docs.stacks.co/reference/api/sbtc-bridge/withdrawal.md
+      parameters:
+      - name: recipient
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: nextToken
+        in: query
+        required: false
+        schema:
+          type: string
+        description: the next token value from the previous return of this api call.
+      - name: pageSize
+        in: query
+        required: false
+        schema:
+          type: string
+        description: the maximum number of items in the response list.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetWithdrawalRecipientRecipientResponse'
+      x-evidence:
+        kind: documentation
+  /withdrawal/sender/{sender}:
+    get:
+      operationId: get_withdrawal_sender_sender
+      tags:
+      - Withdrawal
+      summary: Get withdrawals by sender handler.
+      x-source: https://docs.stacks.co/reference/api/sbtc-bridge/withdrawal.md
+      parameters:
+      - name: sender
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: nextToken
+        in: query
+        required: false
+        schema:
+          type: string
+        description: the next token value from the previous return of this api call.
+      - name: pageSize
+        in: query
+        required: false
+        schema:
+          type: string
+        description: the maximum number of items in the response list.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetWithdrawalSenderSenderResponse'
+      x-evidence:
+        kind: documentation
+  /withdrawal/{id}:
+    get:
+      operationId: get_withdrawal_id
+      tags:
+      - Withdrawal
+      summary: Get withdrawal handler.
+      x-source: https://docs.stacks.co/reference/api/sbtc-bridge/withdrawal.md
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetWithdrawalIdResponse'
+      x-evidence:
+        kind: documentation
+  /{networkstr}/deposits:
+    get:
+      operationId: get_networkstr_deposits
+      tags:
+      - Deposits
+      summary: Get all deposits
+      description: 'Returns all USDCx deposits from Ethereum to Stacks, aggregating data from 3 sources:
+
+        - **ETH Events**: DepositedToRemote events from the xReserve contract
+
+        - **Circle Attestations**: Signed attestations from Circle''s API (after ETH finality)
+
+        - **STX Mints**: Print events from the relay transaction on Stacks
+
+
+        Each deposit has a status:
+
+        - `pending`: Only the ETH event exists (waiting for Circle attestation)
+
+        - `attested`: ETH event + Circle attestation (waiting to be relayed)
+
+        - `relayed`: All 3 sources present (deposit completed)
+
+
+        Deposits are matched by nonce and sorted chronologically (newest first).'
+      x-source: https://docs.stacks.co/reference/api/usdcx-bridge/deposits.md
+      parameters:
+      - name: networkstr
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetNetworkstrDepositsResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostCallRequest:
+      type: object
+      properties:
+        network_identifier:
+          type: object
+          properties:
+            blockchain:
+              type: string
+            network:
+              type: string
+        method:
+          type: string
+        parameters:
+          type: object
+          properties:
+            deployer_address:
+              type: string
+            contract_name:
+              type: string
+            function_name:
+              type: string
+            sender:
+              type: string
+            arguments:
+              type: array
+              items:
+                type: string
+    PostCallResponse:
+      type: object
+      properties:
+        idempotent:
+          type: boolean
+        result:
+          type: object
+          properties:
+            hex:
+              type: string
+            repr:
+              type: string
+            type:
+              type: string
+    GetChainstateResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Chain tip retrieved successfully
+        '404':
+          type: string
+          description: Address not found
+        '405':
+          type: string
+          description: Method not allowed
+        '500':
+          type: string
+          description: Internal server error
+    GetChainstateHeightResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Chainstate retrieved successfully
+        '400':
+          type: string
+          description: Invalid request body
+        '404':
+          type: string
+          description: Address not found
+        '405':
+          type: string
+          description: Method not allowed
+        '500':
+          type: string
+          description: Internal server error
+    PostConstructionCombineResponse:
+      type: object
+      properties:
+        idempotent:
+          type: boolean
+        result:
+          type: object
+          properties:
+            hex:
+              type: string
+            repr:
+              type: string
+            type:
+              type: string
+    PostConstructionMetadataResponse:
+      type: object
+      properties:
+        operation_identifier:
+          type: object
+          properties:
+            index:
+              type: integer
+        type:
+          type: string
+        account:
+          type: object
+          properties:
+            address:
+              type: string
+        amount:
+          type: object
+          properties:
+            value:
+              type: string
+            currency:
+              type: object
+              properties:
+                symbol:
+                  type: string
+                decimals:
+                  type: integer
+        metadata:
+          type: object
+          properties:
+            memo:
+              type: string
+    PostConstructionPayloadsResponse:
+      type: object
+      properties:
+        operation_identifier:
+          type: object
+          properties:
+            index:
+              type: integer
+        type:
+          type: string
+        account:
+          type: object
+          properties:
+            address:
+              type: string
+        amount:
+          type: object
+          properties:
+            value:
+              type: string
+            currency:
+              type: object
+              properties:
+                symbol:
+                  type: string
+                decimals:
+                  type: integer
+        metadata:
+          type: object
+          properties:
+            memo:
+              type: string
+    PostConstructionPreprocessRequest:
+      type: object
+      properties:
+        network_identifier:
+          type: object
+          properties:
+            blockchain:
+              type: string
+            network:
+              type: string
+        operations:
+          type: array
+          items:
+            type: object
+            properties:
+              operation_identifier:
+                type: object
+                properties:
+                  index:
+                    type: integer
+              type:
+                type: string
+              account:
+                type: object
+                properties:
+                  address:
+                    type: string
+              amount:
+                type: object
+                properties:
+                  value:
+                    type: string
+                  currency:
+                    type: object
+                    properties:
+                      symbol:
+                        type: string
+                      decimals:
+                        type: integer
+              metadata:
+                type: object
+                properties:
+                  memo:
+                    type: string
+    PostConstructionPreprocessResponse:
+      type: object
+      properties:
+        operation_identifier:
+          type: object
+          properties:
+            index:
+              type: integer
+        type:
+          type: string
+        account:
+          type: object
+          properties:
+            address:
+              type: string
+        amount:
+          type: object
+          properties:
+            value:
+              type: string
+            currency:
+              type: object
+              properties:
+                symbol:
+                  type: string
+                decimals:
+                  type: integer
+        metadata:
+          type: object
+          properties:
+            memo:
+              type: string
+    PostConstructionSubmitRequest:
+      type: object
+      properties:
+        network_identifier:
+          type: object
+          properties:
+            blockchain:
+              type: string
+            network:
+              type: string
+        signed_transaction:
+          type: string
+    PostConstructionSubmitResponse:
+      type: object
+      properties:
+        idempotent:
+          type: boolean
+        result:
+          type: object
+          properties:
+            hex:
+              type: string
+            repr:
+              type: string
+            type:
+              type: string
+    GetDepositResponse:
+      type: object
+      properties:
+        deposits:
+          type: array
+          description: 'Deposit infos: deposits with a little less data.'
+        nextToken:
+          type: string
+          description: Next token for the search.
+    PostDepositRequest:
+      type: object
+      properties:
+        bitcoinTxid:
+          type: string
+          description: Bitcoin transaction id.
+        bitcoinTxOutputIndex:
+          type: string
+          description: Output index on the bitcoin transaction associated with this specific deposit.
+        reclaimScript:
+          type: string
+          description: Reclaim script.
+        depositScript:
+          type: string
+          description: Deposit script.
+        transactionHex:
+          type: string
+          description: The raw transaction hex.
+        maxFee:
+          type: string
+          description: Maximum fee in satoshis. Required for v2 deposits.
+        recipient:
+          type: string
+          description: The consensus-encoded Stacks principal, represented as hex. Required for v2 deposits.
+      required:
+      - bitcoinTxid
+      - bitcoinTxOutputIndex
+      - reclaimScript
+      - depositScript
+      - transactionHex
+    PostDepositResponse:
+      type: object
+      properties:
+        deposit:
+          type: object
+          description: Deposit object returned on success.
+    PutDepositRequest:
+      type: object
+      properties:
+        deposits:
+          type: string
+          description: Array of deposit updates.
+      required:
+      - deposits
+    PutDepositResponse:
+      type: object
+      properties:
+        deposits:
+          type: array
+          description: 'Deposit infos: deposits with a little less data.'
+    GetDepositTxidResponse:
+      type: object
+      properties:
+        deposits:
+          type: array
+          description: Deposits.
+        nextToken:
+          type: string
+          description: Next token for the search.
+    GetDepositTxidIndexResponse:
+      type: object
+      properties:
+        deposit:
+          type: object
+          description: Deposit object.
+    GetHealthResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Successfully retrieved health data.
+        '400':
+          type: string
+          description: Invalid request body
+        '404':
+          type: string
+          description: Address not found
+        '405':
+          type: string
+          description: Method not allowed
+        '500':
+          type: string
+          description: Internal server error
+    GetLimitsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Limits retrieved successfully
+        '405':
+          type: string
+          description: Method not allowed
+        '500':
+          type: string
+          description: Internal server error
+    GetLimitsAccountResponse:
+      type: object
+      properties:
+        '201':
+          type: string
+          description: Account limits retrieved successfully
+        '400':
+          type: string
+          description: Invalid request body
+        '404':
+          type: string
+          description: Address not found
+        '405':
+          type: string
+          description: Method not allowed
+        '500':
+          type: string
+          description: Internal server error
+    PostNetworkListRequest:
+      type: object
+      properties:
+        metadata:
+          type: object
+          description: Additional metadata
+    PostNetworkListResponse:
+      type: object
+      properties:
+        network_identifiers:
+          type: array
+          description: List of network identifiers
+    PostNetworkOptionsRequest:
+      type: object
+      properties:
+        network_identifier:
+          type: object
+          description: Network identifier object
+        metadata:
+          type: object
+          description: Additional metadata
+      required:
+      - network_identifier
+    PostNetworkOptionsResponse:
+      type: object
+      properties:
+        version:
+          type: object
+          description: Version information
+        allow:
+          type: object
+          description: Allowed operations and capabilities
+    GetV2AccountsPrincipalResponse:
+      type: object
+      properties:
+        balance:
+          type: string
+        locked:
+          type: string
+        unlock_height:
+          type: integer
+          description: Block height when locked balance unlocks (64-bit unsigned integer)
+        nonce:
+          type: integer
+          description: Account transaction nonce (64-bit unsigned integer)
+        balance_proof:
+          type: string
+          description: Merkle proof for the balance value
+        nonce_proof:
+          type: string
+          description: Merkle proof for the nonce value
+    GetV2MicroblocksMicroblockidResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The microblock data (binary stream)
+        '400':
+          type: string
+          description: Bad request
+        '404':
+          type: string
+          description: Not found
+        '500':
+          type: string
+          description: Internal Server Error
+    GetWithdrawalResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Withdrawals retrieved successfully
+        '400':
+          type: string
+          description: Invalid request body
+        '404':
+          type: string
+          description: Address not found
+        '405':
+          type: string
+          description: Method not allowed
+        '500':
+          type: string
+          description: Internal server error
+    PutWithdrawalRequest:
+      type: object
+      properties:
+        withdrawals:
+          type: string
+          description: Withdrawal updates to execute.
+      required:
+      - withdrawals
+    PutWithdrawalResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Withdrawals updated successfully
+        '400':
+          type: string
+          description: Invalid request body
+        '403':
+          type: string
+          description: Forbidden
+        '404':
+          type: string
+          description: Address not found
+        '405':
+          type: string
+          description: Method not allowed
+        '500':
+          type: string
+          description: Internal server error
+    GetWithdrawalRecipientRecipientResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Withdrawals retrieved successfully
+        '400':
+          type: string
+          description: Invalid request body
+        '404':
+          type: string
+          description: Address not found
+        '405':
+          type: string
+          description: Method not allowed
+        '500':
+          type: string
+          description: Internal server error
+    GetWithdrawalSenderSenderResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Withdrawals retrieved successfully
+        '400':
+          type: string
+          description: Invalid request body
+        '404':
+          type: string
+          description: Address not found
+        '405':
+          type: string
+          description: Method not allowed
+        '500':
+          type: string
+          description: Internal server error
+    GetWithdrawalIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Withdrawal retrieved successfully
+        '400':
+          type: string
+          description: Invalid request body
+        '404':
+          type: string
+          description: Address not found
+        '405':
+          type: string
+          description: Method not allowed
+        '500':
+          type: string
+          description: Internal server error
+    GetNetworkstrDepositsResponse:
+      type: object
+      properties:
+        deposits:
+          type: array
+          description: Array of deposit objects
+        total:
+          type: number
+          description: Total number of deposits
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-source: https://docs.stacks.co/get-started/build-a-frontend/authentication.md
+tags:
+- name: Accounts
+- name: Call
+- name: Chainstate
+- name: Construction
+- name: Deposit
+- name: Deposits
+- name: Extended
+- name: Health
+- name: Limits
+- name: Microblocks
+- name: Network
+- name: Reference
+- name: Withdrawal
+security:
+- apiKey: []

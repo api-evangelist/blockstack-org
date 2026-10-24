@@ -1,0 +1,14 @@
+generated: '2026-10-24'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.stacks.co/get-started/build-a-frontend/authentication.md
+sources:
+- https://docs.stacks.co/get-started/build-a-frontend/authentication.md
+- https://docs.stacks.co/cookbook/stacks.js/cryptography-and-security/integrate-api-keys.md
+- https://docs.stacks.co/learn/network-fundamentals/network-basics.md
+- https://docs.stacks.co/learn/block-production/signing.md
+schemes:
+- type: apiKey
+  name: apiKey
+  evidence: Configure Stacks.js to use API keys for enhanced rate limits and monitoring
+docs: https://docs.stacks.co/get-started/build-a-frontend/authentication.md

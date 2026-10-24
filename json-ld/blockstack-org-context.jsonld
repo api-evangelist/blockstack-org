@@ -1,0 +1,172 @@
+{
+  "@context": {
+    "@vocab": "https://blockstack.org/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "blockstack": "https://blockstack.org/schema#",
+    "PostCallRequest": "blockstack:PostCallRequest",
+    "network_identifier": {
+      "@id": "blockstack:network_identifier"
+    },
+    "method": {
+      "@id": "blockstack:method",
+      "@type": "xsd:string"
+    },
+    "parameters": {
+      "@id": "blockstack:parameters"
+    },
+    "PostCallResponse": "blockstack:PostCallResponse",
+    "idempotent": {
+      "@id": "blockstack:idempotent",
+      "@type": "xsd:boolean"
+    },
+    "result": {
+      "@id": "blockstack:result"
+    },
+    "GetChainstateResponse": "blockstack:GetChainstateResponse",
+    "GetChainstateHeightResponse": "blockstack:GetChainstateHeightResponse",
+    "PostConstructionCombineResponse": "blockstack:PostConstructionCombineResponse",
+    "PostConstructionMetadataResponse": "blockstack:PostConstructionMetadataResponse",
+    "operation_identifier": {
+      "@id": "blockstack:operation_identifier"
+    },
+    "type": {
+      "@id": "blockstack:type",
+      "@type": "xsd:string"
+    },
+    "account": {
+      "@id": "blockstack:account"
+    },
+    "amount": {
+      "@id": "blockstack:amount"
+    },
+    "metadata": {
+      "@id": "blockstack:metadata"
+    },
+    "PostConstructionPayloadsResponse": "blockstack:PostConstructionPayloadsResponse",
+    "PostConstructionPreprocessRequest": "blockstack:PostConstructionPreprocessRequest",
+    "operations": {
+      "@id": "blockstack:operations",
+      "@container": "@list"
+    },
+    "PostConstructionPreprocessResponse": "blockstack:PostConstructionPreprocessResponse",
+    "PostConstructionSubmitRequest": "blockstack:PostConstructionSubmitRequest",
+    "signed_transaction": {
+      "@id": "blockstack:signed_transaction",
+      "@type": "xsd:string"
+    },
+    "PostConstructionSubmitResponse": "blockstack:PostConstructionSubmitResponse",
+    "GetDepositResponse": "blockstack:GetDepositResponse",
+    "deposits": {
+      "@id": "blockstack:deposits",
+      "@container": "@list"
+    },
+    "nextToken": {
+      "@id": "blockstack:nextToken",
+      "@type": "xsd:string"
+    },
+    "PostDepositRequest": "blockstack:PostDepositRequest",
+    "bitcoinTxid": {
+      "@id": "blockstack:bitcoinTxid",
+      "@type": "xsd:string"
+    },
+    "bitcoinTxOutputIndex": {
+      "@id": "blockstack:bitcoinTxOutputIndex",
+      "@type": "xsd:string"
+    },
+    "reclaimScript": {
+      "@id": "blockstack:reclaimScript",
+      "@type": "xsd:string"
+    },
+    "depositScript": {
+      "@id": "blockstack:depositScript",
+      "@type": "xsd:string"
+    },
+    "transactionHex": {
+      "@id": "blockstack:transactionHex",
+      "@type": "xsd:string"
+    },
+    "maxFee": {
+      "@id": "blockstack:maxFee",
+      "@type": "xsd:string"
+    },
+    "recipient": {
+      "@id": "blockstack:recipient",
+      "@type": "xsd:string"
+    },
+    "PostDepositResponse": "blockstack:PostDepositResponse",
+    "deposit": {
+      "@id": "blockstack:deposit"
+    },
+    "PutDepositRequest": "blockstack:PutDepositRequest",
+    "PutDepositResponse": "blockstack:PutDepositResponse",
+    "GetDepositTxidResponse": "blockstack:GetDepositTxidResponse",
+    "GetDepositTxidIndexResponse": "blockstack:GetDepositTxidIndexResponse",
+    "GetHealthResponse": "blockstack:GetHealthResponse",
+    "GetLimitsResponse": "blockstack:GetLimitsResponse",
+    "GetLimitsAccountResponse": "blockstack:GetLimitsAccountResponse",
+    "PostNetworkListRequest": "blockstack:PostNetworkListRequest",
+    "PostNetworkListResponse": "blockstack:PostNetworkListResponse",
+    "network_identifiers": {
+      "@id": "blockstack:network_identifiers",
+      "@container": "@list"
+    },
+    "PostNetworkOptionsRequest": "blockstack:PostNetworkOptionsRequest",
+    "PostNetworkOptionsResponse": "blockstack:PostNetworkOptionsResponse",
+    "version": {
+      "@id": "blockstack:version"
+    },
+    "allow": {
+      "@id": "blockstack:allow"
+    },
+    "GetV2AccountsPrincipalResponse": "blockstack:GetV2AccountsPrincipalResponse",
+    "balance": {
+      "@id": "blockstack:balance",
+      "@type": "xsd:string"
+    },
+    "locked": {
+      "@id": "blockstack:locked",
+      "@type": "xsd:string"
+    },
+    "unlock_height": {
+      "@id": "blockstack:unlock_height",
+      "@type": "xsd:integer"
+    },
+    "nonce": {
+      "@id": "blockstack:nonce",
+      "@type": "xsd:integer"
+    },
+    "balance_proof": {
+      "@id": "blockstack:balance_proof",
+      "@type": "xsd:string"
+    },
+    "nonce_proof": {
+      "@id": "blockstack:nonce_proof",
+      "@type": "xsd:string"
+    },
+    "GetV2MicroblocksMicroblockidResponse": "blockstack:GetV2MicroblocksMicroblockidResponse",
+    "GetWithdrawalResponse": "blockstack:GetWithdrawalResponse",
+    "PutWithdrawalRequest": "blockstack:PutWithdrawalRequest",
+    "withdrawals": {
+      "@id": "blockstack:withdrawals",
+      "@type": "xsd:string"
+    },
+    "PutWithdrawalResponse": "blockstack:PutWithdrawalResponse",
+    "GetWithdrawalRecipientRecipientResponse": "blockstack:GetWithdrawalRecipientRecipientResponse",
+    "GetWithdrawalSenderSenderResponse": "blockstack:GetWithdrawalSenderSenderResponse",
+    "GetWithdrawalIdResponse": "blockstack:GetWithdrawalIdResponse",
+    "GetNetworkstrDepositsResponse": "blockstack:GetNetworkstrDepositsResponse",
+    "total": {
+      "@id": "blockstack:total",
+      "@type": "xsd:decimal"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Stacks API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Stacks's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-24) from openapi/_ae-authored/blockstack-org-openapi-generated.yml.",
+  "dcterms:created": "2026-10-24",
+  "dcterms:source": [
+    "openapi/_ae-authored/blockstack-org-openapi-generated.yml"
+  ]
+}
